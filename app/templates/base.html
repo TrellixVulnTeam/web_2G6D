@@ -8,10 +8,19 @@
     </head>
     <body>
     <div>WEB:
-        <a href="/index">Home</a>
-        <a href="/login">Login</a>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('login') }}">Login</a>
     </div>
     <hr>
+    {% with massage = get_flashed_messages() %}
+    {% if massages %}
+    <ul>
+        {% for massage in massages %}
+        <li>{{ massage }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
     {% block content %}{% endblock %}
     </body>
 </html>

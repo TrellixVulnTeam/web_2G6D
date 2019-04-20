@@ -1,0 +1,14 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Web</title>
+        {% else %}
+        <title>Добро пожаловать на WEB</title>
+        {% endif %}
+    </head>
+    <body>
+    <div>WEB:<a href="/index">Home</a></div>
+    <hr>
+    {% block content %}{% endblock %}
+    </body>
+</html>
